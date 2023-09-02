@@ -22,37 +22,37 @@ const loadCard = async (id) => {
     const cardContainer = document.getElementById('card-container')
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
 
-    
+
     const data = await res.json();
     const cards = data.data;
 
-    cardContainer.innerHTML = "" ;
+    cardContainer.innerHTML = "";
 
-   
-    if(cards.length===0){
-        const div=document.createElement('div') 
-        div.classList="w-full my-20"
+
+    if (cards.length === 0) {
+        const div = document.createElement('div')
+        div.classList = "w-full my-20"
         div.innerHTML = `
             <img class="lg:mx-[900px]" src="images/Icon.png" alt="">
             <p class="text-[#171717] text-center text-3xl font-bold lg:mx-[925px]">Oops!! Sorry, There is no content here</p>
              
         `
         cardContainer.appendChild(div)
-     }
+    }
 
-     if(isSortViews){
-        cards.sort((x,y)=>parseFloat(y.others.views.split(" ")[0])-parseFloat(x.others.views.split(" ")[0]));
-        
+    if (isSortViews) {
+        cards.sort((x, y) => parseFloat(y.others.views.split(" ")[0]) - parseFloat(x.others.views.split(" ")[0]));
+
         isSortViews = !isSortViews;
-      }
+    }
 
-     cards.forEach(cards => {
+    cards.forEach(cards => {
         //console.log(cards)
 
         const time = cards.others.posted_date
         //console.log(time)
-        const hour = parseInt((time/60)/60);
-        const minute = parseInt(time%3600)/60;
+        const hour = parseInt((time / 60) / 60);
+        const minute = parseInt(time % 3600) / 60;
         const min = minute.toFixed(0);
         //console.log(hour, min)
 
@@ -71,7 +71,7 @@ const loadCard = async (id) => {
             </div>
             <div class="flex items-center">
                 <p class="ml-[53px]">${cards.authors[0].profile_name}</p>
-                <p>${cards.authors[0].verified ? `<img src="images/verified.png" alt="">`:""}</p>
+                <p>${cards.authors[0].verified ? `<img src="images/verified.png" alt="">` : ""}</p>
             </div>
             <p class="ml-[53px]">${cards.others.views} views</p>
         </div>
@@ -80,17 +80,17 @@ const loadCard = async (id) => {
         cardContainer.appendChild(tubeCards)
     });
 
- }
+}
 
-const handleBlog =()=>{
+const handleBlog = () => {
     window.location.href = "blog.html"
-    }
+}
 
 loadCard("1000")
 
 handleCategory()
 
-function handleSort(){
+function handleSort() {
     isSortViews = !isSortViews;
     loadCard(id)
-  }
+}
