@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <h1 class="text-7xl text-center font-black mt-5 px-5">QnA</h1>
+    <br>
+    <hr class="h-[10px] bg-black">
+    <div class="mx-5 my-5">
+        <h3 class="text-3xl font-medium"><span class="text-3xl font-bold text-red-600">Question-1: </span>Discuss the
+            scope of var, let, and const.</h3>
+        <br>
+        <p class="text-2xl font-semibold"><span class="text-3xl font-bold text-blue-600">Answer: </span>
+            In JavaScript, var, let, and const are used to declare variables, but they have different scopes and
+            behaviors. Understanding the scope of these declarations is crucial for writing clean and bug-free code.
+            <br>
+            <br> Var: <br>
+            <br>
+            var declarations are function-scoped. This means that a variable declared with var is accessible within the
+            function in which it is declared or in the global scope if declared outside of any function.
+            Variables declared with var are hoisted to the top of their containing function or the global scope. This
+            means that they are moved to the top of the function during the compilation phase, so you can use them
+            before they are actually declared in your code.
+            <br>
+            <br> Let: <br>
+            <br>
+            Let declarations are block-scoped. This means that a variable declared with let is only accessible within
+            the block (enclosed by curly braces) in which it is declared.
+            Variables declared with let are not hoisted to the top of their containing block, and they have a temporal
+            dead zone (TDZ) where trying to access them before declaration results in a ReferenceError.
+            <br>
+            <br> Const: <br>
+            <br>
+            Const declarations are also block-scoped like let.
+            Variables declared with const must be assigned a value when declared, and their values cannot be reassigned
+            after declaration. However, the value of a const object (e.g., an array or object) can still be modified;
+            it's the reference that remains constant.
+        </p>
+        <br>
+        <br>
+        <h3 class="text-3xl font-medium"><span class="text-3xl font-bold text-red-600">Question-2: </span>Tell us the
+            use cases of null and undefined.</h3>
+        <br>
+        <p class="text-2xl font-semibold"><span class="text-3xl font-bold text-blue-600">Answer: </span> In JavaScript,
+            null and undefined are two distinct primitive values, and they are often used in different contexts and have
+            different use cases.
+            <br>
+            <br>
+            Use cases for null:
+            <br>
+            <br>
+        <ol class="list-disc text-2xl font-semibold">
+            <li>To initialize a variable that will later hold an object or a value.</li>
+            <li>To clear or reset the value of a variable or property when it's no longer needed.</li>
+            <li>In some cases, it may be used to check if a variable or object property has been intentionally set to an
+                empty or non-existent value.</li>
+        </ol>
+        <br>
+        <br>
+        <p class="text-2xl font-semibold">Use cases for undefined:</p>
+        <br>
+        <br>
+        <ol class="list-disc text-2xl font-semibold">
+            <li>As the initial value of variables that have not been assigned any value.</li>
+            <li>As the default return value of functions that don't explicitly return anything.</li>
+            <li>To check if a property exists in an object (though this can sometimes lead to subtle bugs since
+                undefined is a valid property value).</li>
+        </ol>
+        </p>
+        <br>
+        <br>
+        <h3 class="text-3xl font-medium"><span class="text-3xl font-bold text-red-600">Question-3: </span>What do you
+            mean by REST API?</h3>
+        <br>
+        <p class="text-2xl font-semibold"><span class="text-3xl font-bold text-blue-600">Answer: </span> A REST API is a
+            way for computer programs to talk to each other over the internet. It follows some rules to make this
+            communication clear and organized.
+            <br>
+            <br>
+            No Memory: Each conversation is like a fresh start; the computer doesn't remember past talks.
+            <br>
+            <br>
+            Two Roles: There are two sides: one that gives information (server) and one that asks for it (client).
+            <br>
+            <br>
+            Resources: Information is organized into things called resources, and each resource has a unique address.
+            <br>
+            <br>
+            Actions: You can do things with resources like getting data (GET), adding new data (POST), changing data
+            (PUT), or deleting it (DELETE).
+            <br>
+            <br>
+            Always the Same: The way you talk to the computer is always the same, which makes it easy for both sides to
+            understand each other.
+            <br>
+            <br>
+            Different Languages: You can use different ways to talk to the computer, like using numbers or words.
+            <br>
+            <br>
+            No Secrets: Conversations are open, and nothing is hidden, making it easy to share information.
+            <br>
+            <br>
+            Clear Conversations: The messages between computers are simple and clear so that everyone can understand.
+            <br>
+            <br>
+            In a nutshell, REST APIs help computers talk to each other in a structured and straightforward way, making
+            it easier to share and access information on the internet.
+        </p>
+    </div>
+    <div class="flex justify-center my-10">
+        <button class="btn btn-outline hover:bg-red-600 hover:text-white hover:border-red-600"><a
+                href="index.html">Back</a></button>
+    </div>
+</body>
+
+</html>
