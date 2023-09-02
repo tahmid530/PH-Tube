@@ -33,8 +33,8 @@ const loadCard = async (id) => {
         const div = document.createElement('div')
         div.classList = "w-full my-20"
         div.innerHTML = `
-            <img class="lg:mx-[900px]" src="images/Icon.png" alt="">
-            <p class="text-[#171717] text-center text-3xl font-bold lg:mx-[925px]">Oops!! Sorry, There is no content here</p>
+            <img class="ml-[120px] md:ml-[330px] lg:mx-[900px]" src="images/Icon.png" alt="">
+            <p class="text-[#171717] text-center text-3xl font-bold md:ml-[350px] lg:mx-[925px]">Oops!! Sorry, There is no content here</p>
              
         `
         cardContainer.appendChild(div)
